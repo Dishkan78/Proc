@@ -1,15 +1,27 @@
 #include "Flower.h"
 #include <fstream>
+#include <string>
+#define WRONG_FLOWER 0
 
 using namespace std;
 
 namespace Shubin {
 	// Ввод параметров цветка из файла
-	flower* In(flower& f, ifstream& ifst) {
-		int temp;
+	void In(flower& f, ifstream& ifst) {
+		string temp;
 		ifst >> temp;
-		f.tof = (flower::type)temp;
-		return &f;
+		bool valid = true;
+		for (int i = 0; i < temp.length(); i++)
+		{
+			if (!isdigit(temp[i]) || i > 9)
+			{
+				f.tof = (flower::type)WRONG_FLOWER;
+				valid = false;
+				return;
+			}
+		}
+		if (valid)
+			f.tof = (flower::type)stoi(temp);
 	}
 
 	// Вывод параметров цветка в поток
@@ -24,6 +36,9 @@ namespace Shubin {
 			break;
 		case (f.WILD):
 			ofst << "It is Flower: type = " << "Wild" << endl;
+			break;
+		default:
+			ofst << "Wrong flower" << endl;
 			break;
 		}
 	}

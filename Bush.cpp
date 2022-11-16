@@ -5,11 +5,10 @@ using namespace std;
 namespace Shubin
 {
 	// Ввод параметров кустарника из файла
-	bush* In(bush& t, ifstream& ifst) {
+	void In(bush& t, ifstream& ifst) {
 		int temp;
 		ifst >> temp;
 		t.mof = (bush::Month)temp;
-		return &t;
 	}
 
 	// Вывод параметров кусарника в поток

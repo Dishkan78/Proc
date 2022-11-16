@@ -23,10 +23,8 @@ namespace Shubin
 	void Init(LinkedCircledList& obj);
 	void Clear(LinkedCircledList& obj);
 	
-	void OutTree(LinkedCircledList& obj, ofstream& ofst);
 	void LinkedCircledList_In(LinkedCircledList& obj, ifstream& fin);
 	void LinkedCircledList_Out(LinkedCircledList& obj, ofstream& fout);
-	int consonants(plant& pt);
 	void sort(LinkedCircledList& obj);
 	bool compare(plant* first, plant* second);
 	void swap(Node* first, Node* second);

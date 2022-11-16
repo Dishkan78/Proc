@@ -24,8 +24,12 @@ namespace Shubin
 			obj.SizeList--;
 		}
 		if (obj.SizeList == 1)
+		{
+			obj.SizeList--;
 			delete obj.First;
-		obj.SizeList--;
+			
+		}
+			
 	}
 
 	void LinkedCircledList_In(LinkedCircledList& obj, ifstream& fin)
@@ -66,27 +70,18 @@ namespace Shubin
 		
 		for (int i = 0; i < obj.SizeList; i++)
 		{
+			fout << i + 1 << " : ";
 			Out(*(Temp->plant), fout);
-			fout << "Consonants = " << consonants(*(Temp->plant)) << endl;
 			Temp = Temp->Next;
 			
 		}
 		fout << endl;
-
-	}
-
-	void OutTree(LinkedCircledList& obj, ofstream& ofst)
-	{
-		Node* current = obj.First;
 		for (int i = 0; i < obj.SizeList; i++)
 		{
-			if (current->plant->k == plant::key::TREE)
-			{
-				Out(*(current->plant), ofst);
-			}
-			current = current->Next;
+			OutTree(*(Temp->plant), fout);
+			Temp = Temp->Next;
 		}
-		ofst << endl;
+		fout << endl;
 	}
 
 	bool compare(plant* first, plant* second) {

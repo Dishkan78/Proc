@@ -20,9 +20,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
-    <ProjectGuid>{337EB1D3-1CF2-4132-BA5B-56733423B586}</ProjectGuid>
+    <ProjectGuid>{E975FE54-8B7F-4EA3-A43C-0AEC93ACA2BB}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>lab1procTest</RootNamespace>
+    <RootNamespace>lab1procTests</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
     <ProjectSubType>NativeUnitTestProject</ProjectSubType>
   </PropertyGroup>
@@ -156,7 +156,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="lab1_procTest.cpp" />
+    <ClCompile Include="lab1_procTests.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -171,11 +171,6 @@
     <ProjectReference Include="..\lab1.vcxproj">
       <Project>{f66fda59-76ae-4dba-8bae-c9f2a26409a3}</Project>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="Bush_Input.txt" />
-    <Text Include="Flower_Input.txt" />
-    <Text Include="Tree_Input.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

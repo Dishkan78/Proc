@@ -13,7 +13,7 @@ namespace Shubin
 	struct plant {
 		plant() {}
 		// значения ключей для каждого из растений
-		enum key { TREE, BUSH, FLOWER };
+		enum key { TREE = 1, BUSH, FLOWER };
 		key k; // ключ
 		// используемые альтернативы
 		union { // используем включение
@@ -23,20 +23,22 @@ namespace Shubin
 		};
 		enum habitat { TUNDRA = 1, DESERT, STEPPE };
 		habitat hbt;
-		string name;
+		char name[50];
 	};
 
 	
 	//
 	plant* In(ifstream& ifst);
 	// Сигнатуры требуемых внешних функций
-	tree* In(tree& r, ifstream& ifst);
-	bush* In(bush& t, ifstream& ifst);
-	flower* In(flower& f, ifstream& ifst);
+	void In(tree& r, ifstream& ist);
+	void In(bush& t, ifstream& ist);
+	void In(flower& f, ifstream& ifst);
 	//
 	void Out(plant& s, ofstream& ofst);
+	void OutTree(plant& s, ofstream& ofst);
 	// Сигнатуры требуемых внешних функций.
 	void Out(tree& r, ofstream& ofst);
 	void Out(bush& t, ofstream& ofst);
 	void Out(flower& f, ofstream& ofst);
+	int consonants(plant& pt);
 }

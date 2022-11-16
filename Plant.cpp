@@ -1,7 +1,11 @@
 #include <fstream>
 #include "Plant.h"
+#include <string>
+#include <cstdio>
+#include <iostream>
 using namespace std;
-
+#define WRONG_PLANT 0
+#define WRONG_HABITAT -1
 namespace Shubin
 {
 
@@ -10,8 +14,17 @@ namespace Shubin
 	{
 		plant* pt;
 		int k;
+		string tmp;
 		int hbt;
-		ifst >> k;
+		ifst >> tmp;
+
+		if (tmp == "\0")
+			return 0;
+		if (!isdigit(int(tmp.front())) || tmp.length() > 1)
+			k = WRONG_PLANT;
+		else
+			k = stoi(tmp);
+
 		switch (k) {
 		case 1:
 			pt = new plant;
@@ -29,9 +42,19 @@ namespace Shubin
 			In(pt->f, ifst);
 			break;
 		default:
+			pt = new plant;
+			pt->k = plant::key(WRONG_PLANT);
+			getline(ifst, tmp, '\n');
+			cout << "Wrong plant!" << endl;
 			return 0;
 		}
-		ifst >> pt->name >> hbt;
+		ifst >> pt->name;
+		tmp = "";
+		ifst >> hbt;
+		if (ifst.fail())
+		{
+			hbt = WRONG_HABITAT;
+		}			
 		pt->hbt = (plant::habitat)hbt;
 		return pt;
 	}
@@ -39,7 +62,6 @@ namespace Shubin
 
 	// Вывод параметров растений в поток
 	void Out(plant& s, ofstream& ofst) {
-		ofst << "Name = " << s.name << ", ";
 		switch (s.k) {
 		case plant::key::TREE:
 			Out(s.r, ofst);
@@ -52,7 +74,9 @@ namespace Shubin
 			break;
 		default:
 			ofst << "Incorrect plant!" << endl;
+			return;
 		}
+		ofst << "Name = " << s.name << ", ";
 		switch (s.hbt)
 		{
 		case 1:
@@ -64,7 +88,10 @@ namespace Shubin
 		case 3:
 			ofst << "Habitat = steppe" << endl;
 			break;
+		default:
+			ofst << "Wrong habitat" << endl;
 		}
+		ofst << "Consonants = " << consonants(s) << endl;
 	}
 
 	int consonants(plant& pt) {
@@ -85,11 +112,8 @@ namespace Shubin
 		return count;
 	}
 
-	/*void OutTree(plant& s, ofstream& ofst) 
-	{
-
-		switch (s.k) 
-		{
+	void OutTree(plant& s, ofstream& ofst) {
+		switch (s.k) {
 		case plant::key::TREE:
 			ofst << "Name = " << s.name << ", ";
 			Out(s.r, ofst);
@@ -98,5 +122,5 @@ namespace Shubin
 			return;
 		}
 
-	}*/
+	}
 }
