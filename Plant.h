@@ -7,7 +7,7 @@ using namespace std;
 #include "Tree.h"
 #include "Bush.h"
 #include "Flower.h"
-namespace Melikov
+namespace Shubin
 {
 	// структура, обобщающа€ все имеющиес€ растени€
 	struct Plant {

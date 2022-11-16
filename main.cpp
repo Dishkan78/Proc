@@ -27,7 +27,7 @@
 #include <clocale>
 #include "Container.h"
 using namespace std;
-using namespace Melikov;
+using namespace Shubin;
 
 int main(int argc, char* argv[])
 {

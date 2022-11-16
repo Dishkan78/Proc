@@ -3,7 +3,7 @@
 
 using namespace std;
 
-namespace Melikov {
+namespace Shubin {
 	// ¬вод параметров цветка из файла
 	void In(Flower& _f, ifstream& ifst) 
 	{
