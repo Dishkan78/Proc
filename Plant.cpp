@@ -2,7 +2,7 @@
 #include "Plant.h"
 using namespace std;
 
-namespace Shubin
+namespace Melikov
 {
 
 	// ¬вод параметров обобщенной фигуры из файла

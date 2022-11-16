@@ -8,7 +8,7 @@ using namespace std;
 // Подключение необходимых типов данных
 #include "Tree.h"
 #include "Bush.h"
-namespace Shubin
+namespace Melikov
 {
 	// структура, обобщающая все имеющиеся растения
 	struct plant {

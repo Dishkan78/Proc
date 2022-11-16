@@ -1,5 +1,5 @@
 Filled container. 
-List contains 6 elements
+List contains 5 elements
 It is Tree: age = 25, name = Pine
 Consonants = 2
 It is Bush: month of flowering = June, name = Raspberry
@@ -10,8 +10,6 @@ It is Bush: month of flowering = July, name = Blueberry
 Consonants = 5
 It is Bush: month of flowering = May, name = Strawberry
 Consonants = 7
-It is Tree: age = 10, name = Birch
-Consonants = 4
 
 Empty container. 
 List contains 0 elements
