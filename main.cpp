@@ -31,7 +31,7 @@
 #include "Container.h"
 using namespace std;
 /*
-namespace Shubin {
+namespace Melikov {
     // Сигнатуры требуемых внешних функций
     /*
     void Init(container& c);
@@ -40,7 +40,7 @@ namespace Shubin {
     void Out(container& c, ofstream& ofst);
     
 }*/
-using namespace Shubin;
+using namespace Melikov;
 
 int main(int argc, char* argv[])
 {

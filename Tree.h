@@ -2,7 +2,7 @@
 #ifndef __Tree__
 #define __Tree__
 
-namespace Shubin
+namespace Melikov
 {
 	// дерево
 	struct tree {

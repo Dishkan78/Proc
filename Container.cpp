@@ -2,7 +2,7 @@
 #include "Plant.h"
 #include <fstream>
 using namespace std;
-namespace Shubin
+namespace Melikov
 {
 
 	void Init(LinkedCircledList& obj)

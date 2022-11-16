@@ -1,7 +1,7 @@
 #pragma once
 #ifndef __Bush__
 #define __Bush__
-namespace Shubin
+namespace Melikov
 {
 	// прямоугольник
 	struct bush {

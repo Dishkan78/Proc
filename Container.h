@@ -4,7 +4,7 @@
 
 #include "Plant.h"
 
-namespace Shubin
+namespace Melikov
 {
 	struct Node
 	{

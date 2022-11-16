@@ -8,7 +8,7 @@ using namespace std;
 // Подключение необходимых типов данных
 #include "Tree.h"
 #include "Bush.h"
-namespace Shubin
+namespace Melikov
 {
 	// структура, обобщающая все имеющиеся растения
 	struct plant {
@@ -21,6 +21,8 @@ namespace Shubin
 			tree r;
 			bush t;
 		};
+		enum habitat { TUNDRA = 1, DESERT, STEPPE };
+		habitat hbt;
 	};
 	//
 	plant* In(ifstream& ifst);

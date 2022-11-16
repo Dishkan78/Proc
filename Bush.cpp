@@ -2,7 +2,7 @@
 #include "Bush.h"
 
 using namespace std;
-namespace Shubin
+namespace Melikov
 {
 	// Ввод параметров кустарника из файла
 	void In(bush& t, ifstream& ifst) {
