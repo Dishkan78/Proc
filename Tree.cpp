@@ -7,13 +7,14 @@ namespace Shubin
 {
 
 	// Ввод параметров дерева из файла
-	void In(tree& r, ifstream& ifst) {
-		ifst >> r.age >> r.name;
+	tree* In(tree& r, ifstream& ifst) {
+		ifst >> r.age;
+		return &r;
 	}
 
 	// Вывод параметров дерева в поток
 	void Out(tree& r, ofstream& ofst) {
 		ofst << "It is Tree: age = " << r.age
-			<< ", name = " << r.name << endl;
+			<< endl;
 	}
 }
