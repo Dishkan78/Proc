@@ -1,15 +1,18 @@
 #pragma once
 
 
-namespace Shubin {
+namespace Melikov 
+{
 	// Flower
-	struct flower {
-		enum type {
+	struct Flower 
+	{
+		enum Type 
+		{
 			HOME = 1,
 			GARDEN,
 			WILD,
 		};
-		type tof; // type of flower
+		Type _tof; // type of flower
 	};
 
 }

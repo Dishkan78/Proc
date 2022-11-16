@@ -1,83 +1,59 @@
 #include <fstream>
 #include "Plant.h"
-#include <string>
-#include <cstdio>
-#include <iostream>
 using namespace std;
-#define WRONG_PLANT 0
-#define WRONG_HABITAT -1
-namespace Shubin
+
+namespace Melikov
 {
-
 	// Ввод параметров обобщенной фигуры из файла
-	plant* In(ifstream& ifst)
+	Plant* In(ifstream& ifst)
 	{
-		plant* pt;
-		int k;
-		string tmp;
-		int hbt;
-		ifst >> tmp;
-
-		if (tmp == "\0")
-			return 0;
-		if (!isdigit(int(tmp.front())) || tmp.length() > 1)
-			k = WRONG_PLANT;
-		else
-			k = stoi(tmp);
-
-		switch (k) {
+		Plant* pt;
+		int _k;
+		int _hbt;
+		ifst >> _k;
+		switch (_k) {
 		case 1:
-			pt = new plant;
-			pt->k = plant::key::TREE;
-			In(pt->r, ifst);
+			pt = new Plant;
+			pt->_k = Plant::Key::TREE;
+			In(pt->_r, ifst);
 			break;
 		case 2:
-			pt = new plant;
-			pt->k = plant::key::BUSH;
-			In(pt->t, ifst);
+			pt = new Plant;
+			pt->_k = Plant::Key::BUSH;
+			In(pt->_t, ifst);
 			break;
 		case 3:
-			pt = new plant;
-			pt->k = plant::key::FLOWER;
-			In(pt->f, ifst);
+			pt = new Plant;
+			pt->_k = Plant::Key::FLOWER;
+			In(pt->_f, ifst);
 			break;
 		default:
-			pt = new plant;
-			pt->k = plant::key(WRONG_PLANT);
-			getline(ifst, tmp, '\n');
-			cout << "Wrong plant!" << endl;
 			return 0;
 		}
-		ifst >> pt->name;
-		tmp = "";
-		ifst >> hbt;
-		if (ifst.fail())
-		{
-			hbt = WRONG_HABITAT;
-		}			
-		pt->hbt = (plant::habitat)hbt;
+		ifst >> pt->_name >> _hbt;
+		pt->_hbt = (Plant::Habitat)_hbt;
 		return pt;
 	}
 
 
 	// Вывод параметров растений в поток
-	void Out(plant& s, ofstream& ofst) {
-		switch (s.k) {
-		case plant::key::TREE:
-			Out(s.r, ofst);
+	void Out(Plant& s, ofstream& ofst) 
+	{
+		ofst << "Name = " << s._name << ", ";
+		switch (s._k) {
+		case Plant::Key::TREE:
+			Out(s._r, ofst);
 			break;
-		case plant::key::BUSH:
-			Out(s.t, ofst);
+		case Plant::Key::BUSH:
+			Out(s._t, ofst);
 			break;
-		case plant::key::FLOWER:
-			Out(s.f, ofst);
+		case Plant::Key::FLOWER:
+			Out(s._f, ofst);
 			break;
 		default:
 			ofst << "Incorrect plant!" << endl;
-			return;
 		}
-		ofst << "Name = " << s.name << ", ";
-		switch (s.hbt)
+		switch (s._hbt)
 		{
 		case 1:
 			ofst << "Habitat = tundra" << endl;
@@ -88,23 +64,24 @@ namespace Shubin
 		case 3:
 			ofst << "Habitat = steppe" << endl;
 			break;
-		default:
-			ofst << "Wrong habitat" << endl;
 		}
-		ofst << "Consonants = " << consonants(s) << endl;
 	}
 
-	int consonants(plant& pt) {
+	int Consonants(Plant& pt) 
+	{
 		char consonants[40] = { 'B', 'b', 'C', 'c', 'D', 'd', 'F', 'f', 'G', 'g', 'H', 'h', 'J', 'j', 'K', 'k', 'L', 'l', 'M', 'm', 'N', 'n', 'P', 'p', 'Q', 'q',
-		'R', 'r', 'S', 's', 'T', 't', 'V', 'v', 'W', 'w', 'X', 'x', 'Z','z'};
+		'R', 'r', 'S', 's', 'T', 't', 'V', 'v', 'W', 'w', 'X', 'x', 'Z','z' };
 		int count = 0;
 		for (int i = 0; i < 50; i++)
 		{
-			if (pt.name[i] == '\0')
+			if (pt._name[i] == '\0')
+			{
 				break;
+			}
 			for (int j = 0; j < 40; j++)
 			{
-				if (pt.name[i] == consonants[j]) {
+				if (pt._name[i] == consonants[j]) 
+				{
 					count++;
 				}
 			}
@@ -112,11 +89,13 @@ namespace Shubin
 		return count;
 	}
 
-	void OutTree(plant& s, ofstream& ofst) {
-		switch (s.k) {
-		case plant::key::TREE:
-			ofst << "Name = " << s.name << ", ";
-			Out(s.r, ofst);
+	void OutTree(Plant& s, ofstream& ofst) 
+	{
+		switch (s._k) 
+		{
+		case Plant::Key::TREE:
+			ofst << "Name = " << s._name << ", ";
+			Out(s._r, ofst);
 			break;
 		default:
 			return;

@@ -4,30 +4,31 @@
 
 #include "Plant.h"
 
-namespace Shubin
+namespace Melikov
 {
 	struct Node
 	{
-		plant* plant;
-		Node* Next;
-		Node* Prev;
+		Plant* _plant;
+		Node* _next;
+		Node* _prev;
 	};
 
-	struct LinkedCircledList
+	struct Container
 	{
-		Node* First;
-		Node* Last;
-		size_t SizeList;
+		Node* _first;
+		Node* _last;
+		size_t _sizeList;
 	};
 
-	void Init(LinkedCircledList& obj);
-	void Clear(LinkedCircledList& obj);
-	
-	void LinkedCircledList_In(LinkedCircledList& obj, ifstream& fin);
-	void LinkedCircledList_Out(LinkedCircledList& obj, ofstream& fout);
-	void sort(LinkedCircledList& obj);
-	bool compare(plant* first, plant* second);
-	void swap(Node* first, Node* second);
+	void Init(Container& obj);
+	void Clear(Container& obj);
+
+	void ContainerIn(Container& obj, ifstream& fin);
+	void ContainerOut(Container& obj, ofstream& fout);
+	int Consonants(Plant& pt);
+	void Sort(Container& obj);
+	bool Compare(Plant* first, Plant* second);
+	void Swap(Node* first, Node* second);
 
 }
 

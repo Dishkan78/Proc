@@ -1,10 +1,10 @@
 #pragma once
 #ifndef __Bush__
 #define __Bush__
-namespace Shubin
+namespace Melikov
 {
 	// пр€моугольник
-	struct bush {
+	struct Bush {
 		enum Month
 		{
 			JANUARY = 1,
@@ -20,7 +20,7 @@ namespace Shubin
 			NOVEMBER,
 			DECEMBER,
 		};
-		Month mof; // Month of flowering - мес€ц цветени€
+		Month _mof; // Month of flowering - мес€ц цветени€
 		 // название
 	};
 }
