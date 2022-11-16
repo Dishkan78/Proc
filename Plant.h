@@ -8,7 +8,7 @@ using namespace std;
 // Подключение необходимых типов данных
 #include "Tree.h"
 #include "Bush.h"
-namespace Melikov
+namespace Shubin
 {
 	// структура, обобщающая все имеющиеся растения
 	struct plant {
@@ -22,8 +22,6 @@ namespace Melikov
 			bush t;
 		};
 	};
-
-	
 	//
 	plant* In(ifstream& ifst);
 	// Сигнатуры требуемых внешних функций
@@ -32,6 +30,7 @@ namespace Melikov
 
 	//
 	void Out(plant& s, ofstream& ofst);
+	void OutTree(plant& s, ofstream& ofst);
 	// Сигнатуры требуемых внешних функций.
 	void Out(tree& r, ofstream& ofst);
 	void Out(bush& t, ofstream& ofst);

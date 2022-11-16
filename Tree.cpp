@@ -3,7 +3,7 @@
 
 using namespace std;
 
-namespace Melikov
+namespace Shubin
 {
 
 	// ¬вод параметров дерева из файла

@@ -4,7 +4,7 @@
 
 #include "Plant.h"
 
-namespace Melikov
+namespace Shubin
 {
 	struct Node
 	{
@@ -25,10 +25,7 @@ namespace Melikov
 	
 	void LinkedCircledList_In(LinkedCircledList& obj, ifstream& fin);
 	void LinkedCircledList_Out(LinkedCircledList& obj, ofstream& fout);
-	int consonants(plant& pt);
-	void sort(LinkedCircledList& obj);
-	bool compare(plant* first, plant* second);
-	void swap(Node* first, Node* second);
+	
 
 }
 
