@@ -68,6 +68,12 @@ namespace Shubin
 			Temp = Temp->Next;
 		}
 		fout << endl;
+		for (int i = 0; i < obj.SizeList; i++)
+		{
+			OutTree(*(Temp->plant), fout);
+			Temp = Temp->Next;
+		}
+		fout << endl;
 	}
 
 }

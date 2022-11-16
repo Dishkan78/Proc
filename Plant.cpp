@@ -28,7 +28,7 @@ namespace Shubin
 	}
 
 
-	// ¬ывод параметров текущей фигуры в поток
+	// ¬ывод параметров растений в поток
 	void Out(plant& s, ofstream& ofst) {
 		switch (s.k) {
 		case plant::key::TREE:
@@ -39,6 +39,17 @@ namespace Shubin
 			break;
 		default:
 			ofst << "Incorrect plant!" << endl;
+		}
+	}
+
+	void OutTree(plant& s, ofstream& ofst) {
+		switch (s.k) {
+		case plant::key::TREE:
+			Out(s.r, ofst);
+			break;
+		default:
+			return;
+
 		}
 	}
 }
